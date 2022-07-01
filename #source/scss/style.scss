@@ -1,5 +1,47 @@
 // Обнуление стилей
 @import "nullstyle.scss";
 // Подключение шрифтов
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 //SCSS
+.main {
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #2B2726;
+    color: #fff;
+}
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.slider {
+		&__title {
+            font-weight: 700;
+            font-size: 25px;
+            padding: 0 0 30px 0;
+		}
+        &__content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+		&__block {
+            background-color: #F0EC8B;
+            border-radius: 10px;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+		}
+
+		&__text {
+            color: #403541;
+            font-size: 16px;
+            font-size: 35px;
+            padding: 0 15px;
+            text-align: center;
+		}
+}
