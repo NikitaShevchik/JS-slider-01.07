@@ -6,8 +6,6 @@ const arrowRight = document.querySelector('.arrows_right');
 
 let text = ['Привет, я искусственный интелект.', 'Меня закрыли внутри этого блока.', 'Помогите...']
 
-
-
 //textSlider.innerHTML = k
 
 // function changeText() {
@@ -88,7 +86,7 @@ function sliderEndless() {
 // sliderWithEnd()
 
 /*-------Слайдер с картинками-------*/
-function sliderImages(){
+function sliderImages() {
     const sliderImage = document.querySelector('.slider__image')
     let images = ['1.jpg', '2.jpg', '3.jpg']
     function setImage(i) {
@@ -128,3 +126,46 @@ function sliderImages(){
     arrowRight.addEventListener('click', imageRight);
     autoImageSlider(i)
 }
+
+/*-------Слайдер с картинками из HTML-------*/
+const sliderBlockImages = document.querySelector('.slider__boss');
+const allImages = sliderBlockImages.querySelectorAll('.slider__image')
+const allImagesItems = sliderBlockImages.querySelectorAll('.slider__item');
+
+
+function setSliderImages() {
+    var i = 0;
+    var allImagesItemsLength = allImagesItems.length;
+    var prev = 0;
+    function setFirst() {
+        allImagesItems[i].classList.add('z_10')
+        i++;
+    }
+    setFirst()
+    function slideImage() {
+        function previ() {
+            if (i == 0) {
+                prev = allImagesItemsLength - 1;
+            } else if (i == allImagesItemsLength) {
+                prev = allImagesItemsLength - 1;
+            } else {
+                prev = i - 1;
+            }
+        }
+        previ() // поиск индекса предыдущей картинки
+        if (i == allImagesItemsLength) {
+            i = 0;
+            allImagesItems[i].classList.add('z_10')
+            setTimeout(() => allImagesItems[prev].classList.remove('z_10'), 500)
+            i++;
+
+        } else {
+            allImagesItems[i].classList.add('z_10')
+            setTimeout(() => allImagesItems[prev].classList.remove('z_10'), 500)
+            i++;
+        }
+    }
+    setInterval(slideImage, 4000)
+}
+
+setSliderImages()
