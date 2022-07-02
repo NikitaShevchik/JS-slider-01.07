@@ -28,6 +28,13 @@ body{
             flex-direction: column;
         }
 		&__block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+		}
+        &__textbackground{
             background-color: #F0EC8B;
             border-radius: 10px;
             width: 100%;
@@ -35,7 +42,7 @@ body{
             display: flex;
             align-items: center;
             justify-content: center;
-		}
+        }
 
 		&__text {
             color: #403541;
@@ -43,5 +50,39 @@ body{
             font-size: 35px;
             padding: 0 15px;
             text-align: center;
+            line-height: 1.4;
 		}
+        &__arrows {
+            padding: 10px 0;
+        }
+        &__imagesblock {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__image {
+            display: block;
+            width: 70%;
+            height: 70%;
+        }
+}
+
+.arrows {
+    display: flex;
+    &__arrow {
+        user-select: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 50px;
+        margin: 0 40px 0 0;
+        &:last-child{
+            margin: 0;
+        }
+    }
+}
+.arrows__arrow._last{
+    opacity: 0.4;
+    cursor: auto;
 }
