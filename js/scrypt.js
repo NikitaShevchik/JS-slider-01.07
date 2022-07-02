@@ -4,10 +4,9 @@ const textSlider = document.querySelector('.slider__text');
 const arrowLeft = document.querySelector('.arrows_left');
 const arrowRight = document.querySelector('.arrows_right');
 
-let text = ['Привет, я искусственный интелект.', 'Меня закрыли внутри этого блока.', 'Помогите...']
+let text = ['Это маленький сайт со слайдерами.', 'Сюда можно листать, можно и назад', 'Помогите...', 'Текст этого слайдера находится в массиве', 'И добавлять можно что угодно', 'А это последний текст в массиве', 'Э.. Надурил']
 
 //textSlider.innerHTML = k
-
 // function changeText() {
 //     let i = 0
 //     textSlider.innerHTML = text[i]
@@ -21,7 +20,6 @@ let text = ['Привет, я искусственный интелект.', 'М
 //     setInterval(counter, 2000)
 // }
 // changeText()
-
 /*-------------Слайдер который "упирается" в левый и правый крайние текста---------------*/
 function sliderWithEnd() {
     var i = 0;
@@ -83,8 +81,7 @@ function sliderEndless() {
     arrowRight.addEventListener('click', slideRight);
 }
 /*-------Запуск "упирающегося" слайдера-------*/
-// sliderWithEnd()
-
+sliderWithEnd()
 /*-------Слайдер с картинками-------*/
 function sliderImages() {
     const sliderImage = document.querySelector('.slider__image')
@@ -126,12 +123,10 @@ function sliderImages() {
     arrowRight.addEventListener('click', imageRight);
     autoImageSlider(i)
 }
-
 /*-------Слайдер с картинками из HTML-------*/
 const sliderBlockImages = document.querySelector('.slider__boss');
 const allImages = sliderBlockImages.querySelectorAll('.slider__image')
 const allImagesItems = sliderBlockImages.querySelectorAll('.slider__item');
-
 
 function setSliderImages() {
     var i = 0;
@@ -158,7 +153,6 @@ function setSliderImages() {
             allImagesItems[i].classList.add('z_10')
             setTimeout(() => allImagesItems[prev].classList.remove('z_10'), 500)
             i++;
-
         } else {
             allImagesItems[i].classList.add('z_10')
             setTimeout(() => allImagesItems[prev].classList.remove('z_10'), 500)
@@ -167,5 +161,4 @@ function setSliderImages() {
     }
     setInterval(slideImage, 4000)
 }
-
 setSliderImages()

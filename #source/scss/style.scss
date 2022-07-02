@@ -43,7 +43,6 @@ body{
             align-items: center;
             justify-content: center;
         }
-
 		&__text {
             color: #403541;
             font-size: 16px;
@@ -75,7 +74,6 @@ body{
             width: 500px;
             height: 500px;
         }
-        
         &__image {
             position: relative;
             object-fit: cover;
@@ -102,8 +100,6 @@ body{
         left: 150%;
     }
 }
-
-
 .arrows {
     display: flex;
     &__arrow {
